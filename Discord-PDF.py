@@ -5,6 +5,7 @@ from dhooks import Webhook, File
 from fpdf import FPDF
 from io import BytesIO
 
+
 def sun():
     today = date.today().strftime("%F")
     URL = ""
@@ -20,7 +21,7 @@ def sun():
     a = open(today + ".txt", "r")
     for x in a:
         pdf.cell(200, 7, txt=x, ln=1)
-    pdf.output(today+".pdf")
+    pdf.output(today + ".pdf")
     hook = Webhook(URL)
     file = File(today + ".pdf")
     hook.send(file=file)
