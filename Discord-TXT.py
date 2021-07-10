@@ -5,7 +5,7 @@ from dhooks import Webhook, File
 from io import BytesIO
 
 
-def sun():
+def distxt():
     today = date.today().strftime("%F")
     URL = ""
     aptlist = ubelt.cmd("apt list --upgradeable")["out"]
@@ -19,4 +19,4 @@ def sun():
     hook.send(file=file)
 
 
-sun()
+distxt()
