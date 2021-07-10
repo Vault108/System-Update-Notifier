@@ -6,7 +6,7 @@ from fpdf import FPDF
 from io import BytesIO
 
 
-def sun():
+def dispdf():
     today = date.today().strftime("%F")
     URL = ""
     aptlist = ubelt.cmd("apt list --upgradeable")["out"]
@@ -27,4 +27,4 @@ def sun():
     hook.send(file=file)
 
 
-sun()
+dispdf()
