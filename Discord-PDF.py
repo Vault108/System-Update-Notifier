@@ -4,8 +4,10 @@ from datetime import date
 from dhooks import Webhook, File
 from fpdf import FPDF
 from io import BytesIO
+from loguru import logger
 
 
+@logger.catch
 def dispdf():
     today = date.today().strftime("%F")
     URL = ""
@@ -27,4 +29,5 @@ def dispdf():
     hook.send(file=file)
 
 
+logger.add("dispdf{time}.log")
 dispdf()

@@ -3,8 +3,10 @@ import ubelt
 from datetime import date
 from dhooks import Webhook, File
 from io import BytesIO
+from loguru import logger
 
 
+@logger.catch
 def distxt():
     today = date.today().strftime("%F")
     URL = ""
@@ -19,4 +21,5 @@ def distxt():
     hook.send(file=file)
 
 
+logger.add("distxt{time}.log")
 distxt()
