@@ -5,9 +5,11 @@ from dhooks import Webhook, File
 from fpdf import FPDF
 from io import BytesIO
 from loguru import logger
+from ratelimit import limits
 
 
 @logger.catch
+@limits(calls=1, period=120) # limits to 1 call per 120 seconds. 
 def dispdf():
     today = date.today().strftime("%F")
     URL = ""
