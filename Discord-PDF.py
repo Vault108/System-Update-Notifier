@@ -9,7 +9,7 @@ from ratelimit import limits
 
 
 @logger.catch
-@limits(calls=1, period=120) # limits to 1 call per 120 seconds. 
+@limits(calls=1, period=120)  # limits to 1 call per 120 seconds.
 def dispdf():
     today = date.today().strftime("%F")
     URL = ""

@@ -6,8 +6,9 @@ from io import BytesIO
 from loguru import logger
 from ratelimit import limits
 
+
 @logger.catch
-@limits(calls=1, period=120) # 1 call per 120 seconds. 
+@limits(calls=1, period=120)  # 1 call per 120 seconds.
 def distxt():
     today = date.today().strftime("%F")
     URL = ""
