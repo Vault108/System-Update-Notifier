@@ -6,7 +6,7 @@ from ratelimits import limits
 
 
 @logger.catch
-@limits(calls=1, period=120) # 1 call per 120 seconds. 
+@limits(calls=1, period=120)  # 1 call per 120 seconds.
 def suntext():
     ServerName = "test"  # server name
     updates = ubelt.cmd('sudo apt update')['out'].splitlines()[-1]
